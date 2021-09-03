@@ -36,7 +36,6 @@ const c_texto = document.getElementById('c_texto');
 const d_texto = document.getElementById('d_texto');
 const submitBtn = document.getElementById('submit');
 
-
 let currentQuiz = 0;
 
 loadQuiz();
@@ -54,9 +53,21 @@ function loadQuiz(){
     
 }
 
+function getSelected(){
+    const answerEls = document.getSelectorALL('.answer');
+
+    answerEls.forEach(answerEl => {
+        if(answerEl.checked){
+            return answerEl.id;
+        }
+    });
+    return undefined
+}
+
 submitBtn.addEventListener('click', () => {
 
     currentQuiz ++;
+    getSelected();
 
     if(currentQuiz < quizData.length){
         loadQuiz();
