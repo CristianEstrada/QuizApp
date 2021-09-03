@@ -29,6 +29,7 @@ const quizData = [
         correct:'a'
     }
 ];
+const quiz = document.getElementById("quiz");
 const questionEl = document.getElementById('question');
 const a_texto = document.getElementById('a_texto');
 const b_texto = document.getElementById('b_texto');
@@ -87,10 +88,10 @@ submitBtn.addEventListener('click', () => {
             if(currentQuiz < quizData.length){
                 loadQuiz();
             }else {
-            alert("Haz terminado todo el Quiz grandioso!")
+                quiz.innerHTML = `<h2>Has respondido correctamente ${score}/${quizData.length}</h2>`
             }
     }else{
-        alert("no se ha seleccionado respuesta")
+        alert("elija una respuesta para continuar")
     }
 
 })
