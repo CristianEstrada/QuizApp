@@ -37,6 +37,7 @@ const d_texto = document.getElementById('d_texto');
 const submitBtn = document.getElementById('submit');
 
 let currentQuiz = 0;
+let score = 0;
 
 loadQuiz();
 
@@ -52,27 +53,39 @@ function loadQuiz(){
 
     
 }
-
+function deselect(){
+    answerEls.forEach((answerEl) => {
+        answerEl.checked = false;
+    })
+}
 function getSelected(){
-    const answerEls = document.getSelectorALL('.answer');
+    const answerEls = document.querySelectorAll(".answer");
 
-    answerEls.forEach(answerEl => {
+    let answer = undefined;
+
+    answerEls.forEach((answerEl) => {
         if(answerEl.checked){
-            return answerEl.id;
+            answer = answerEl.id;
         }
     });
-    return undefined
+    return answer;
 }
 
 submitBtn.addEventListener('click', () => {
+    const answer = getSelected();
+    if(answer){
 
-    currentQuiz ++;
-    getSelected();
-
-    if(currentQuiz < quizData.length){
-        loadQuiz();
-    }else {
-        alert("Haz terminado todo el Quiz grandioso!")
+        if(answer === quizData[currentQuiz].correct){
+            score ++;
+        }
+        currentQuiz ++;
+            if(currentQuiz < quizData.length){
+                loadQuiz();
+            }else {
+            alert("Haz terminado todo el Quiz grandioso!")
+            }
+    }else{
+        alert("no se ha seleccionado respuesta")
     }
 
 })
