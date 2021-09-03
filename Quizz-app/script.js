@@ -42,6 +42,7 @@ let score = 0;
 loadQuiz();
 
 function loadQuiz(){
+    deselectAnswers();
     const currentQuizData = quizData[currentQuiz];
 
     questionEl.innerText = currentQuizData.question;
@@ -53,11 +54,7 @@ function loadQuiz(){
 
     
 }
-function deselect(){
-    answerEls.forEach((answerEl) => {
-        answerEl.checked = false;
-    })
-}
+
 function getSelected(){
     const answerEls = document.querySelectorAll(".answer");
 
@@ -71,7 +68,15 @@ function getSelected(){
     return answer;
 }
 
+function deselectAnswers(){
+    const answerEls = document.querySelectorAll(".answer");
+    answerEls.forEach((answerEl) => {
+        answerEl.checked = false;
+    });
+}
+
 submitBtn.addEventListener('click', () => {
+
     const answer = getSelected();
     if(answer){
 
