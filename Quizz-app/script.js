@@ -45,11 +45,23 @@ function loadQuiz(){
     const currentQuizData = quizData[currentQuiz];
 
     questionEl.innerText = currentQuizData.question;
-    
+
     a_texto.innerText = currentQuizData.a;
     b_texto.innerText = currentQuizData.b;
     c_texto.innerText = currentQuizData.c;
     d_texto.innerText = currentQuizData.d;
 
-    currentQuestion++;
+    
 }
+
+submitBtn.addEventListener('click', () => {
+
+    currentQuiz ++;
+
+    if(currentQuiz < quizData.length){
+        loadQuiz();
+    }else {
+        alert("Haz terminado todo el Quiz grandioso!")
+    }
+
+})

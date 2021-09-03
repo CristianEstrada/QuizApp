@@ -38,6 +38,11 @@ ul li {
     font-size: 1.2rem;
     margin: 1rem 0;
 }
+
+ul li label{
+    cursor: pointer;
+}
+
 button {
     font-family: inherit;
     font-size: 1.5rem;
