@@ -1,32 +1,32 @@
 const quizData = [
     {
-        question:"texto de prueba",
-        a:"respuesta 1",
-        b:"respuesta 2",
-        c:"respuesta 3",
-        d:"respuesta 4",
-        correct: 'c'
+        question:"¿Que equipo de lol fue el ganador de worlds en la s1?",
+        a:"Fnatic",
+        b:"Skt t1",
+        c:"Origen",
+        d:"Elements",
+        correct: 'a'
     },{
-        question: "texto de prueba 2",
-        a:"respuesta 1",
-        b:"respuesta 2",
-        c:"respuesta 3",
-        d:"respuesta 4",
+        question: "¿Cual es el jugador profesional de lol activo mas antigüo?",
+        a:"CoreJJ",
+        b:"Faker",
+        c:"Ambition",
+        d:"Bengi",
+        correct: 'a'
+    },{
+        question: "¿Quien es sjockz?",
+        a:"La novia de sneaky",
+        b:"Caster profesional de lol",
+        c:"Diseñadora de annie",
+        d:"Voz de irelia",
         correct: 'b'
     },{
-        question: "texto de prueba 3",
-        a:"respuesta 1",
-        b:"respuesta 2",
-        c:"respuesta 3",
-        d:"respuesta 4",
-        correct: 'd'
-    },{
-        question: "texto de prueba 4",
-        a:"respuesta 1",
-        b:"respuesta 2",
-        c:"respuesta 3",
-        d:"respuesta 4",
-        correct:'a'
+        question: "Cual es el equipo con mas titulos de la historia de lol?",
+        a:"T1",
+        b:"SKT T1",
+        c:"FNATIC",
+        d:"KT",
+        correct:'b'
     }
 ];
 const quiz = document.getElementById("quiz");
