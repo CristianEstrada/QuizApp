@@ -88,7 +88,8 @@ submitBtn.addEventListener('click', () => {
             if(currentQuiz < quizData.length){
                 loadQuiz();
             }else {
-                quiz.innerHTML = `<h2>Has respondido correctamente ${score}/${quizData.length}</h2>`
+                quiz.innerHTML = `<h2>Has respondido correctamente ${score}/${quizData.length}</h2>
+                <button onclick="location.reload()">Reiniciar</button>`
             }
     }else{
         alert("elija una respuesta para continuar")
